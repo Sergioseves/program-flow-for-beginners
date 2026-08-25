@@ -7,7 +7,10 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart TD
-    A[start] --> B[end]
+    A("Start") --> B["Input password"]
+    B --> C{"Password correct?"}
+    C -->|no| B
+    C -->|yes| D("End")
 `;
 
 module.exports = answer.trim();
